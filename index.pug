@@ -20,14 +20,14 @@
             date: "18 Generations",
             deadline: "End of Universe"
         }
-    ]
+    ];
 
     var finishedProjectsTiles = [
         {
             title: "DoUKnowAbout",
             date: "Don't know, will get back to you on this"
         }
-    ]
+    ];
 
 
 html
@@ -50,5 +50,5 @@ html
         h2 Finished Projects
         for project in finishedProjectsTiles
             div(class="projectTile")
-                h3 Title: #{project.title}
+                h3 #{project.title}
                 h5 Date: #{project.date}
