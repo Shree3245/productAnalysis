@@ -51,7 +51,7 @@ router.use('/', function(req, res, next) {
 /* GET home page. */
 router.get('/', function(req, res, next) {
     console.log("Ongoing Projects in 'res' >", res.locals.ongoingProjects);
-    res.render('index', {title: "JASA | Project Foundry", ongoingProjects: res.locals.ongoingProjects})
+    res.render('index', {title: "VARS | Project Foundry", ongoingProjects: res.locals.ongoingProjects})
 });
 
 module.exports = router;
