@@ -11,3 +11,4 @@
 .idea/dictionaries/abhishek.xml
 .vscode
 .DS_Store
+node_modules/**/*
