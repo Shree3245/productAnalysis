@@ -3,24 +3,6 @@ var firebase = require('firebase');
 var XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
 var router = express.Router();
 
-var httpRequest = new XMLHttpRequest();
-
-httpRequest.onreadystatechange = function (resp) {
-    if (httpRequest.readyState === XMLHttpRequest.DONE) {
-        console.log("4");
-    } else if (httpRequest.readyState === 3) {
-        console.log("3");
-    } else if (httpRequest.readyState === 2) {
-        console.log("2");
-    } else if (httpRequest.readyState === 1) {
-        console.log("1");
-    } else if (httpRequest.readyState === 0) {
-        console.log("0");
-    } else {
-        console.log(httpRequest.status);
-    }
-};
-
 var config = {
     apiKey: "AIzaSyC67YlaL3PDKvlW7-GOX4t2K-5HvgrjanQ",
     authDomain: "jasa-project-foundry.firebaseapp.com",
@@ -69,20 +51,6 @@ router.use('/', function (req, res, next) {
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-    fetch("http://sentiment.vivekn.com/api/text/",
-        {
-            headers: {
-                'Accept-Encoding': 'gzip, deflate',
-                'Accept': '*/*',
-                'Connection': 'keep-alive',
-                'Content-Type': "application/x-www-form-urlencoded"
-            },
-            method: "POST",
-            body: JSON.stringify({ txt: 'hi'})
-        })
-        .then(function (res) { console.log(res) })
-        .catch(function (res) { console.log(res) });
-
     res.render('index', { title: "JASA | Project Foundry", ongoingProjects: res.locals.ongoingProjects })
 });
 
