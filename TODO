@@ -1,0 +1,10 @@
+'Cmd/Ctrl+Enter' // Triggers `Todo: Toggle Box`
+'Alt+D' // Triggers `Todo: Toggle Done`
+'Alt+C' // Triggers `Todo: Toggle Cancelled`
+'Alt+S' // Triggers `Todo: Toggle Start`
+'Cmd/Ctrl+Shift+A' // Triggers  `Todo: Archive`
+Todo:
+  ☐ Make a proper front end @high 
+  ☐ Make a sub-folder for all pug files involved in Sentiment Analyzer @low 
+  ☐ Configure an AWS S3 bucket for static file storage @critical 
+  ☐ Figure out how to use AJAX to load results after callback instead of waiting to render page in callback @high 

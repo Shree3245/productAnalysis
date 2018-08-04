@@ -1,6 +1,5 @@
 var express = require('express');
 var firebase = require('firebase');
-var XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
 var router = express.Router();
 
 var config = {

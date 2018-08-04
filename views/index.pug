@@ -1,6 +1,5 @@
 html
     head
-        - var title = "JASA | Project Foundry";
         title=title
         link(rel="stylesheet" type="text/css" href="stylesheets/indexStyle.css")
 
@@ -10,7 +9,7 @@ html
         h2 Ongoing Projects
         for project in ongoingProjects
             div(class="projectTile")
-                h3 #{project.title}
+                h3 #[a(href=project.pid) #{project.title}]
                 h5 Date: #{project.date}
                 h5 Deadline: #{project.deadline}
 
@@ -18,5 +17,5 @@ html
         h2 Finished Projects
         for project in finishedProjects
             div(class="projectTile")
-                h3 #{project.title}
+                h3 #[a(href=project.pid) #{project.title}]
                 h5 Date: #{project.date}
