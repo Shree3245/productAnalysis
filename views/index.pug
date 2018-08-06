@@ -18,4 +18,6 @@ html
         for project in finishedProjects
             div(class="projectTile")
                 h3 #[a(href=project.pid) #{project.title}]
-                h5 Date: #{project.date}
+                h5 Start Date: #{project.startDate}
+                h5 Expected Finish Date: #{project.deadline}
+                h5 Actual Finish Date: #{project.finishDate}
