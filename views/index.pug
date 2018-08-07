@@ -1,22 +1,24 @@
-html
-    head
-        title=title
-        link(rel="stylesheet" type="text/css" href="stylesheets/indexStyle.css")
+extends bootstrap-base
 
-    body
-        h1(id="headerTitle")=title
+block frankenstein-body
+    h1(id="headerTitle")=title
+    br
 
-        h2 Ongoing Projects
+    h2 Ongoing Projects
+    br
+    .row
         for project in ongoingProjects
-            div(class="projectTile")
+            div(class="col-3")
                 h3 #[a(href=project.pid) #{project.title}]
                 h5 Date: #{project.date}
                 h5 Deadline: #{project.deadline}
 
-        br
-        h2 Finished Projects
+    br
+    h2 Finished Projects
+    br
+    .row
         for project in finishedProjects
-            div(class="projectTile")
+            div(class="col-3")
                 h3 #[a(href=project.pid) #{project.title}]
                 h5 Start Date: #{project.startDate}
                 h5 Expected Finish Date: #{project.deadline}

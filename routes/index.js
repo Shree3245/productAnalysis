@@ -2,16 +2,6 @@ var express = require('express');
 var firebase = require('firebase');
 var router = express.Router();
 
-var config = {
-    apiKey: "AIzaSyC67YlaL3PDKvlW7-GOX4t2K-5HvgrjanQ",
-    authDomain: "jasa-project-foundry.firebaseapp.com",
-    databaseURL: "https://jasa-project-foundry.firebaseio.com",
-    projectId: "jasa-project-foundry",
-    storageBucket: "jasa-project-foundry.appspot.com",
-    messagingSenderId: "373535287386"
-};
-firebase.initializeApp(config);
-
 router.use('/', function (req, res, next) {
     var ongoingProjectsRef = firebase.database().ref('ongoingProjects');
     var ongoingProjectsObj;

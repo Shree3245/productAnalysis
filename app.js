@@ -6,6 +6,18 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var foundersRouter = require('./routes/founders');
 var sentimentAnalyzerRouter = require('./routes/sentiment-analyzer');
+var dashboardRouter = require("./routes/dashboard");
+var firebase = require('firebase');
+
+var config = {
+  apiKey: "AIzaSyC67YlaL3PDKvlW7-GOX4t2K-5HvgrjanQ",
+  authDomain: "jasa-project-foundry.firebaseapp.com",
+  databaseURL: "https://jasa-project-foundry.firebaseio.com",
+  projectId: "jasa-project-foundry",
+  storageBucket: "jasa-project-foundry.appspot.com",
+  messagingSenderId: "373535287386"
+};
+firebase.initializeApp(config);
 
 var app = express();
 
@@ -22,6 +34,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/founders', foundersRouter);
 app.use('/sentiment-analyzer', sentimentAnalyzerRouter);
+app.use('/dashboard', dashboardRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

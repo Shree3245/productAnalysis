@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
 
 router.get("/", (req, res) => {
-    res.render("sentiment-analyzer-index", { title: "JASA Sentiment Analyzer" });
+    res.render("sentiment-analyzer/index", { title: "JASA Sentiment Analyzer" });
 })
 
 router.post("/analyze", jsonParser, (req, res) => {
@@ -18,9 +18,9 @@ router.post("/analyze", jsonParser, (req, res) => {
         'text': req.body.text
     }, function (error, response) {
         if (error === null) {
-            res.render('sentiment-analyzer-results', { title: 'Results', heading: "Here are your results", results: response });
+            res.render('sentiment-analyzer/results', { title: 'Results', heading: "Here are your results", results: response });
         } else {
-            res.render('sentiment-analyzer-results', { title: 'ERROR', heading: "Something went wrong..." });
+            res.render('sentiment-analyzer/results', { title: 'ERROR', heading: "Something went wrong..." });
         }
     });
 })

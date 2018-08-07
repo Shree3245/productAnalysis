@@ -1,0 +1,21 @@
+extends ../bootstrap-base
+
+block frankenstein-body
+    h1 #{title}
+    h3 Add, remove, and edit projects for the Foundry
+    br
+
+    h2 
+        a(href="add-project") Add a Project
+
+    br
+
+    h2 Delete
+    //- form(action="/dashboard/delete-project" method="post")
+    h4 Display projects based on status (ongoing or finished) as a dropdown list
+
+    br
+
+    h2 Edit
+
+    h4 Display dropdown to choose project to edit, then edit form. Requires some JavaScript that Shreeven needs to handle.
