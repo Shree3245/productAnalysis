@@ -3,13 +3,3 @@
     padding: 0.5em;
     border-bottom: 0.1em solid whitesmoke;
 }
-
-a {
-    transition-duration: 300ms;
-}
-
-a:hover {
-    color: lightblue;
-    text-decoration: none;
-    transition-duration: 300ms;
-}

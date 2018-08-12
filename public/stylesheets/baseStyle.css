@@ -4,3 +4,13 @@ body {
     color: whitesmoke;
     background-color: #282828;
 }
+
+a {
+    transition-duration: 300ms;
+}
+
+a:hover {
+    color: #01FF70;
+    text-decoration: none;
+    transition-duration: 300ms;
+}
