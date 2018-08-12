@@ -45,4 +45,8 @@ router.post("/add-project", jsonParser, (req, res) => {
     });
 });
 
+router.get("/delete-project", (req, res) => {
+    // Do some stuff
+});
+
 module.exports = router;

@@ -1,5 +1,8 @@
 extends bootstrap-base
 
+block frankenstein-head
+    link(rel="stylesheet" href="/stylesheets/indexStyle.css")
+
 block frankenstein-body
     h1(id="headerTitle")=title
     br
@@ -7,19 +10,26 @@ block frankenstein-body
     h2 Ongoing Projects
     br
     .row
-        for project in ongoingProjects
-            div(class="col-3")
-                h3 #[a(href=project.pid) #{project.title}]
-                h5 Date: #{project.date}
-                h5 Deadline: #{project.deadline}
+        - for(let i = 0; i<ongoingProjects.length; i++) {
+            div(class="col-3 tile")
+                h3 #[a(href=ongoingProjects[i].pid) #{ongoingProjects[i].title}]
+                h5 Date: #{ongoingProjects[i].date}
+                h5 Deadline: #{ongoingProjects[i].deadline}
+            - if (i!=0 && i%4==0) {
+                div(class="w-100")
+            - }
+        - }
 
     br
     h2 Finished Projects
     br
     .row
-        for project in finishedProjects
-            div(class="col-3")
-                h3 #[a(href=project.pid) #{project.title}]
-                h5 Start Date: #{project.startDate}
-                h5 Expected Finish Date: #{project.deadline}
-                h5 Actual Finish Date: #{project.finishDate}
+        - for(let i = 0; i<finishedProjects.length; i++) {
+            div(class="col-3 tile")
+                h3 #[a(href=finishedProjects[i].pid) #{finishedProjects[i].title}]
+                h5 Date: #{finishedProjects[i].date}
+                h5 Deadline: #{finishedProjects[i].deadline}
+            - if (i!=0 && i%4==0) {
+                div(class="w-100")
+            - }
+        - }
